@@ -39,7 +39,7 @@ export default class UserService {
     }
 
     async login(userData) {
-        const user = await this.userDAO.getByUsername(userData.username)
+        const user = await this.userDAO.getByEmail(userData.email)
         if (!user) throw new ValidationError("El nombre de usuario o la contraseña son incorrectos")
         if (user.password !== userData.password) throw new ValidationError("El nombre de usuario o la contraseña son incorrectos")
         return user
