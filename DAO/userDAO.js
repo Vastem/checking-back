@@ -64,4 +64,14 @@ export default class UserDAO {
             throw new DataAccesError("Error al obtener por User.");
         }
     }
+
+    async getByEmail(email) {
+        try {
+            const user = await User.findOne({ email });
+            return user;
+        } catch (error) {
+            console.log(error);
+            throw new DataAccesError("Error al obtener por User.");
+        }
+    }
 }
