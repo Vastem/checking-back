@@ -1,14 +1,20 @@
-import express from "express";
-import userRouter from "./routes/userRoutes.js";
+import express from "express"
+
+import userRouter from "./routes/userRoutes.js"
+import courseRouter from "./routes/courseRoutes.js"
+import unitRouter from "./routes/unitRoutes.js"
+
 import { connectDatabase } from "./middlewares/connectDatabase.js"
 
 
-const app = express();
-app.use(express.json());
+const app = express()
+app.use(express.json())
 
 app.use("/", connectDatabase)
 
 app.use("/user", userRouter)
+app.use("/course", courseRouter)
+app.use("/unit", unitRouter)
 
 app.use((req, res) => {
     res.status(404).send({ message: "NOT FOUND" })
