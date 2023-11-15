@@ -1,5 +1,6 @@
 import express from "express";
 import userRouter from "./routes/userRoutes.js";
+import attendanceRouter from "./routes/attendanceRoutes.js";
 import { connectDatabase } from "./middlewares/connectDatabase.js"
 
 
@@ -9,6 +10,7 @@ app.use(express.json());
 app.use("/", connectDatabase)
 
 app.use("/user", userRouter)
+app.use("/attendance", attendanceRouter)
 
 app.use((req, res) => {
     res.status(404).send({ message: "NOT FOUND" })
