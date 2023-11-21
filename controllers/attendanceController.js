@@ -1,4 +1,4 @@
-import AttendanceService from "../services/attendanceService";
+import AttendanceService from "../services/attendanceService.js";
 
 export async function registerAttendance(req, res) {
     const attendanceService = new AttendanceService()
