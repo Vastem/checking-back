@@ -9,6 +9,10 @@ const attendanceSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
+    course: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
+    },
     students: [{
         student: {
             type: String,

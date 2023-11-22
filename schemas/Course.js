@@ -15,8 +15,7 @@ const courseSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    students: [String],
-    units: [Unit.schema]
+    students: [String]
 }, { versionKey: false })
 
 const Course = mongoose.model('Course', courseSchema)
