@@ -12,7 +12,11 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    color: {
+        type: String,
+        required: true
+    },
 }, { versionKey: false });
 
 const User = mongoose.model('User', userSchema);
